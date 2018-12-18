@@ -1,0 +1,27 @@
+<div class="article active">
+  {{#*inline "article-header"}}
+
+  {{/inline}}
+
+  {{!-- Article content. --}}
+  {{#*inline "article-content"}}
+
+    <div class="content">
+      {{>includes/articles/name }}
+    </div>
+
+  {{/inline}}
+
+  {{!-- Related articles. --}}
+  {{#*inline "related-articles"}}
+    {{>includes/articles/cityroutes marquee="none"}}
+
+  {{/inline}}
+  <div class="marquee img" style="display: {{marquee}}; background-image: url('{{marquee-img-src}}')"></div>
+  <div class="titles">
+    <p>{{title-info}}</p>
+    <h1>{{title-main}}</h1>
+    <h3>{{title-sub}}</h3>
+  </div>
+  <div class="content">{{article-content}}</div>
+</div>

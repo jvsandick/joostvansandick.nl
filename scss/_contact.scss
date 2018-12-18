@@ -1,0 +1,77 @@
+#profile{
+  display: grid;
+  //grid-column: span all;
+  @include bp(large) { grid-area: auto / span 6 / span 1 / -2; }
+  @include bp(medium) { grid-area: auto / span 6 / span 1 / -1; }
+  @include bp(small) { grid-area: auto / 1 / span 1 / -1;
+    grid-template-areas: "img img,
+  text text";}
+  //grid-auto-columns: minmax(var(--gs), var(--gs));
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(var(--gs), auto);
+  grid-template-areas: "img text";
+  .img {
+    grid-area: img;
+    background-color: $grey;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+  }
+  .text {
+    padding: var(--gs) var(--gp);
+    grid-area: text;
+    @extend %diagonal-box;
+    display: grid;
+    place-items: center left;
+    box-shadow: -3px 0 $yellow;
+    span {
+      color: $grey;
+      font-size: 0.85em;
+      padding-right: 1em;
+    }
+    div{
+      width: 100%;
+    }
+    ul {
+      list-style: none;
+      margin: var(--gsh) 0 0 0;
+      padding: 0;
+      line-height: 2;
+      li {
+        &:first-child {
+          font-weight: 700;
+        }
+      }
+    }
+    form {
+      display: none;
+      width: 100%;
+      margin: var(--gsh) 0 0 0;
+      input, button {
+        display: block;
+        width: 100%;
+        background-color: $bg;
+        border: 1px solid $stroke;
+        outline: none;
+        text-align: center;
+        padding: var(--gp);
+        &::placeholder {
+          //text-align: center;
+        }
+      }
+      #switch {
+        width: 100%;
+      }
+      button {
+        transition:
+          box-shadow $short-ease,
+          color $short-ease;
+
+        &:hover {
+          box-shadow: 0 5px $yellow;
+          color: lighten($off-black, 40%);
+        }
+      }
+    }
+  }
+}

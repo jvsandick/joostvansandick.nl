@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      {{#if title}}
+        {{title}}
+      {{else}}
+        Joost van Sandick
+      {{/if}}
+    </title>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+    <!--<link rel="stylesheet" href="scss/_global.scss">-->
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+    {{#> head-block}}
+      {{!-- Custom <head> content per page could be added. --}}
+    {{/head-block}}
+  </head>
+  <body>
+    {{#> header-block}}
+      {{> includes/header }}
+    {{/header-block}}
+    {{#> hero-block}}
+      {{!-- Hero content goes here. --}}
+      <p>This is the default hero block content.</p>
+      <ul>
+        <li><a href="/page-one.html">Page One</a></li>
+        <li><a href="/page-two.html">Page Two</a></li>
+        <li><a href="/cityroutes.html">City Routes</a></li>
+      </ul>
+    {{/hero-block}}
+
+    {{#> content-block }}
+
+    {{/ content-block }}
+
+    <footer>
+      {{#> footer-block}}
+        {{!--
+          The `includes/footer` partial is the default content,
+          but can be overridden.
+        --}}
+        {{> includes/footer }}
+      {{/footer-block}}
+    </footer>
+    {{#> scripts-block}}
+      {{!-- Custom scripts per page can be added. --}}
+    {{/scripts-block}}
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+    $('.article').click(function(){
+      if (!$(this).hasClass('active')) {
+        $(this).addClass('active');
+    }});
+    $('#menu-icon').click(function(){
+        $('#mainmenu').toggleClass('active');
+    });
+    </script>
+  </body>
+</html>

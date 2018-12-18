@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet your maker</title>
+    <link rel="stylesheet" href="css/app.css">
+    <!--<link rel="stylesheet" href="scss/_global.scss">-->
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+  </head>
+  <body>
+    <div id="page-container">
+
+      <div class="grid-container" style="position: sticky;">
+        <div id="mobile-menu">
+          <div id="menu-icon">
+            <div class="stroke"></div>
+            <div class="stroke"></div>
+            <div class="stroke"></div>
+          </div>
+        </div>
+        <div id="header"><div>
+          <h1>projects on the side</h1>
+          <h2>This is what happens when I get bored</h2>
+        </div></div>
+        <div class="menu" id="mainmenu">
+          <ul>
+            <a href="/index.html"><li>Home</li></a>
+            <a href="/about.html"><li>About me</li></a>
+            <a href="/portfolio.html"><li>Portfolio</li></a>
+            <a href="/projects.html"><li class="active">projects</li></a>
+            <a href="/contact.html"><li>Contact</li></a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-container ">
+        <div class="article"><a href="/personal-website.html">
+          <div class="marquee img" style="background-image: url('/images/personal-website.jpg')"></div>
+          <div class="titles">
+            <p>fall 2018 | web design | HTML, SASS, Javascript </p>
+            <h1>Building a portfolio website</h1>
+            <h3>The struggles of a perfectionist learning a trade</h3>
+          </div></a>
+        </div>
+
+        <div class="article">
+          <div class="marquee img" style="background-image: url('https://images.unsplash.com/photo-1506686798560-b3217e54b634?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a9203ed0d5b69d590a28ab7eb4eb10d7&auto=format&fit=crop&w=1350&q=80')"></div>
+          <div class="titles">
+            <p>fall 2018 | Web templating | HTML, Javascript </p>
+            <h1>Getting a grip on Handlebars.js</h1>
+            <h3>Building semantic HTML templates with partials, blocks and layouts</h3>
+          </div>
+        </div>
+
+        <div class="article"><a href="/hover-effects.html">
+          <div class="marquee img" style="background-image: url('/images/Hover-effects.jpg')"></div>
+          <div class="titles">
+            <p>summer 2018 | self-study | CSS </p>
+            <h1>Exploring hover effect posibilities</h1>
+            <h3>::before / ::after, :hover and CSS transitions</h3>
+          </div></a>
+        </div>
+
+        <div class="article">
+          <div class="marquee img" style="background-image: url('/images/custom.jpg')"></div>
+          <div class="titles">
+            <p>2017 - 2018 | Custom build | Blood, sweat and tears</p>
+            <h1>Building a custom motor bike</h1>
+            <h3>Years of struggles and procrastination with a happy ending</h3>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <script>
+      ScrollReveal().reveal('.content', { duration: 700 });
+      ScrollReveal().reveal('.article', { duration: 700, distance: '0px', origin: 'left' });
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+      $('.article').click(function(){
+        if (!$(this).hasClass('active')) {
+          $(this).addClass('active');
+        }});
+    </script>
+
+  </body>
+</html>
