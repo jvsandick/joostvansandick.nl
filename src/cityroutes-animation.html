@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+        Cityroutes Animation | Joost van Sandick
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+    <link rel="stylesheet" href="css/app.css">
+
+
+
+  </head>
+  <body>
+    <div id="page-container">
+
+      <div class="grid-container" style="position: sticky;">
+              <div id="mobile-menu">
+                <div id="menu-icon">
+                  <div class="stroke"></div>
+                  <div class="stroke"></div>
+                  <div class="stroke"></div>
+                </div>
+              </div>
+              <div id="header"><div>
+                <h1>portfolio</h1>
+                <h2></h2>
+              </div></div>
+              <div class="menu" id="mainmenu">
+                <ul>
+                  <a href="/"><li>Home</li></a>
+                  <a href="/about.html"><li>About me</li></a>
+                  <a href="/portfolio.html"><li>Portfolio</li></a>
+                  <a href="/projects.html"><li>projects</li></a>
+                  <a href="/contact.html"><li>Contact</li></a>
+                </ul>
+              </div>
+            </div>
+<div class="grid-container">
+    <div class="article active">
+      <div class="marquee img" style="background-image: url('/images/cityroutes.jpg')"></div>
+      <div class="titles">
+        <p>winter 2017-2018 | project | motion</p>
+        <h1>A visualization of daily routes for hundreds of bikes</h1>
+        <h3>A first try in motion graphics</h3>
+      </div>
+      <div class="content">
+        <p>Working at a startup with the usual cashflow problems can be frustrating, but also creates opportunity. The lack of budget means you have to use the resources at hand and adapt to the situation, every single day. In this case we wanted a video to show the impact of hundreds of billboard bikes. Budget for the video: €0.</p>
+
+        <p>The Bikevertising Company turned Out Of Home advertising into a dynamic industry by using bikes as an advertising space. By offering the billboard bikes to students and young professionals free of charge, they ensure movement throughout the day. I offered to try my hand at motion graphics to visualize the potential daily reach and full coverage of a city with hundreds of these billboard bikes. After Effect's rather steep learning curve proved to be a great challenge.</p>
+
+        <p>The result was part of a more extensive video showcasing the full scope of Bikevertising's services.</p>
+
+        <div class="offset-box">
+          <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/295402678?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+
+        <h2>The map</h2>
+        <p>The city map of Amsterdam was to be the foundation and backdrop of the video. Getting the right map in a workable format and high resolution was crucial for the quality of the final product. The level of detail, labels, colors and file format limits the choice. After a look at the available options I ended up with a Google Maps extension called
+          <a href="https://www.snazzymaps.com" target="_blank">Snazzy Maps</a>. Snazzy maps grants control of the visibility and color of all elements on the map. Downside is the 1000x1000 pixel limit and 10 images a day. I ended up stitching about thirty 1000*1000 pixel images to create the detailed map.</p>
+
+        <p>I started out by giving roads, greens and water a highly contrasting color. By doing this, the elements could be split into separate images by selecting the colors in Photoshop. As shown below, this created a map with three separate layers. Later on in the production, the 'roads layer' is used extensively, to create the routes.</p>
+
+        <div class="offset-box img" style="background-image: url('/images/Cityroutes_small.png')"></div>
+
+        <h2>Drawing routes</h2>
+        <p>In a first try at this video, I used Trapcode Particular to leave a trace of particals on a screenshot of Google Map's satelite view. Using Particular was complex and very CPU heavy. So I opted to use stroked paths with trim paths this time around. By using a broad stroke and then using roads layer as clipping mask, drawing the routes was easy. Still, since we are trying to show the impact of hundreds of bikes, I had to create a lot of them.</p>
+
+        <p>The scene starts out with a single bike's route on any given day. A HUD shows the distance travelled, number of stops and advertisement reach. Subsequently it shows routes being driven throughout the city: "imagine the impact of hundreds of bikes".</p>
+
+        <p>In a later stage, I duplicated all the routes, moved the first layer -30px on the Z-axis, and blurred the latter. This lifted the bike routes up, and gave the illusion of illuminating the map below.</p>
+
+        <quote>Looking back at the part of the process I wrote about so far, I have absolutely no clue how I managed to pull this off. I am bewilderd how I ended up taking the steps I took without any experience or a proper plan.</quote>
+
+        <div class="offset-box img" style="background-image: url('/images/Cityroutes_process.jpg')"></div>
+        <p>The project file is a bloody mess tbh</p>
+
+        <p>To be continued</p>            
+      </div>
+    </div>
+  </div>
+
+    <footer>
+        <div class="grid-container">
+        <h2>Footer</h2>
+        <ul>
+          <li>Home</li>
+          <li>About me</li>
+          <li>Portfolio</li>
+          <li>Projects</li>
+          <li>Contact</li>
+        </ul>
+        </div>
+        
+    </footer>
+
+    </div>
+
+
+    <script>
+      ScrollReveal().reveal('.content', { duration: 700 });
+      ScrollReveal().reveal('.article', { duration: 700, distance: '20px', origin: 'left' });
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+    $('.article').click(function(){
+      if (!$(this).hasClass('active')) {
+        $(this).addClass('active');
+    }});
+    $('#menu-icon').click(function(){
+        $('#mainmenu').toggleClass('active');
+    });
+    </script>
+  </body>
+</html>

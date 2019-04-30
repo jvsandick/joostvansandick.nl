@@ -1,105 +1,50 @@
-'use strict';
-
 const gulp = require('gulp');
+const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
-// const del = require('del');
-const env = require('gulp-util').env;
 const handlebars = require('gulp-compile-handlebars');
 const rename = require('gulp-rename');
-// var gulp          = require('gulp');
-// const browserSync   = require('browser-sync').create();
-const $             = require('gulp-load-plugins')();
-const autoprefixer  = require('autoprefixer');
+const autoprefixer = require('gulp-autoprefixer');
 
-const config = {
-  src: './src',
-  dest: './dist',
-  watchers: [
-    {
-      match: ['./src/**/*.hbs'],
-      tasks: ['html']
-    }
-  ]
-};
+function css(){
+  return gulp
+  .src('src/scss/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('src/css'))
+    .pipe(browserSync.stream())
+}
 
-var sassPaths = [
-  'node_modules/foundation-sites/scss',
-  'node_modules/motion-ui/src'
-];
 
-gulp.task('clean', () => del(config.dest));
-
-gulp.task('html', ['clean'], () => {
-  return gulp.src(`${config.src}/pages/*.hbs`)
+function html() {
+  return gulp
+    .src('./src/pages/*.hbs')
     .pipe(handlebars({}, {
       ignorePartials: true,
-      batch: [`${config.src}/partials`]
+      batch: ['./src/partials']
     }))
     .pipe(rename({
       extname: '.html'
     }))
-    .pipe(gulp.dest(config.dest));
-});
-
-function sass() {
-  return gulp.src('scss/app.scss')
-    .pipe($.sass({
-      // includePaths: sassPaths,
-      outputStyle: 'compressed' // if css compressed **file size**
-    })
-      .on('error', $.sass.logError))
-    .pipe($.postcss([
-      autoprefixer({ browsers: ['last 2 versions', 'ie >= 9'] })
-    ]))
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('./src'))
     .pipe(browserSync.stream());
 };
 
-function serve() {
+
+function watch() {
   browserSync.init({
-    server: "./"
+    server: {
+      baseDir: 'src'
+    }
   });
+  gulp.watch('src/scss/**/*.scss', css)
+  gulp.watch('src/**/*.hbs', html)
+  gulp.watch('src/**/*.html').on('change', browserSync.reload)
+  gulp.watch('src/js/**/*.js').on('change', browserSync.reload)
+};
 
-  gulp.watch("scss/*.scss", sass);
-  gulp.watch("*.html").on('change', browserSync.reload);
-}
-
-gulp.task('serve', () => {
-  browserSync.init({
-    open: false,
-    notify: false,
-    files: [`${config.dest}/**/*`],
-    server: config.dest
-  });
-});
-
-gulp.task('watch', () => {
-  config.watchers.forEach(item => {
-    gulp.watch(item.match, item.tasks);
-  });
-});
-
-gulp.task('default', ['html'], done => {
-  if (env.dev) {
-    gulp.start('serve');
-    gulp.start('watch');
-  }
-  done();
-});
+// function build() {
+// };
 
 
-gulp.task('sass', sass);
-gulp.task('serve', gulp.series('sass', serve));
-gulp.task('default', gulp.series('sass', serve));
-
-
-
-
-
-
-
-
-
-
-
-
+exports.css = css;
+exports.watch = watch;
+exports.html = html;

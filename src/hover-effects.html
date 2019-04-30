@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+        Hover effects | Joost van Sandick
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+    <link rel="stylesheet" href="css/app.css">
+
+
+
+  </head>
+  <body>
+    <div id="page-container">
+
+      <div class="grid-container" style="position: sticky;">
+              <div id="mobile-menu">
+                <div id="menu-icon">
+                  <div class="stroke"></div>
+                  <div class="stroke"></div>
+                  <div class="stroke"></div>
+                </div>
+              </div>
+              <div id="header"><div>
+                <h1>Project</h1>
+                <h2></h2>
+              </div></div>
+              <div class="menu" id="mainmenu">
+                <ul>
+                  <a href="/"><li>Home</li></a>
+                  <a href="/about.html"><li>About me</li></a>
+                  <a href="/portfolio.html"><li>Portfolio</li></a>
+                  <a href="/projects.html"><li>projects</li></a>
+                  <a href="/contact.html"><li>Contact</li></a>
+                </ul>
+              </div>
+            </div>
+    <div class="grid-container">
+      <div class="article active">
+        <div class="marquee img" style="background-image: url('images/Hover-effects.jpg')"></div>
+        <div class="titles">
+          <p>summer 2018 | self-study | CSS </p>
+          <h1>Exploring hover effect posibilities</h1>
+          <h3>::before / ::after, :hover and CSS transitions</h3>
+        </div>
+        <div class="content">
+          <p>I recently started creating a collection of components and effects. Having a backlog of ideas at hand will come in handy at one point or another. But above all, in creating this collection, I got a chance to explore the possibilities of the ::before and ::after pseudo-classes, in combination with :hover state and transitions.</p>
+
+          <p>Each of the divs below has a different hover effect. Checkout the source code or fork the Pen to use any of them in your own projects.</p>
+
+          <div class="offset-box">
+            <p data-height="720" data-theme-id="dark" data-slug-hash="yqmeZP" data-default-tab="result" data-user="Yeaust" data-pen-title="Hover effect divs (transitions)" class="codepen">See the Pen <a href="https://codepen.io/Yeaust/pen/yqmeZP/">Hover effect divs (transitions)</a> by jvsandick (<a href="https://codepen.io/Yeaust">@Yeaust</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+          </div>
+
+          <h2>Notes</h2>
+          <p>This is collection is solely made as a reference guide. Sizes, colors, transition directions and speeds are just for demonstration purposes. Change them as you seem fit.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+        <div class="grid-container">
+        <h2>Footer</h2>
+        <ul>
+          <li>Home</li>
+          <li>About me</li>
+          <li>Portfolio</li>
+          <li>Projects</li>
+          <li>Contact</li>
+        </ul>
+        </div>
+        
+    </footer>
+
+    </div>
+
+
+    <script>
+      ScrollReveal().reveal('.content', { duration: 700 });
+      ScrollReveal().reveal('.article', { duration: 700, distance: '20px', origin: 'left' });
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+    $('.article').click(function(){
+      if (!$(this).hasClass('active')) {
+        $(this).addClass('active');
+    }});
+    $('#menu-icon').click(function(){
+        $('#mainmenu').toggleClass('active');
+    });
+    </script>
+  </body>
+</html>
+
+
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover effect study</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="scss/_global.scss">
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+  </head>
+  <body>
+    <div id="page-container">
+
+      <div class="grid-container" style="position: sticky;">
+        <div id="mobile-menu">
+          <div id="menu-icon">
+            <div class="stroke"></div>
+            <div class="stroke"></div>
+            <div class="stroke"></div>
+          </div>
+        </div>
+        <div id="header"><h1>meet your maker</h1></div>
+        <div class="menu" id="mainmenu">
+          <ul>
+            <a href="/index.html"><li>Home</li></a>
+            <a href="/about.html"><li>About me</li></a>
+            <a href="/portfolio.html"><li>Portfolio</li></a>
+            <a href="/projects.html"><li>projects</li></a>
+            <a href="/contact.html"><li>Contact</li></a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="article active">
+          <div class="marquee img" style="background-image: url('images/Hover-effects.jpg')"></div>
+          <div class="titles">
+            <p>summer 2018 | self-study | CSS </p>
+            <h1>Exploring hover effect posibilities</h1>
+            <h3>::before / ::after, :hover and CSS transitions</h3>
+          </div>
+          <div class="content">
+            <p>I recently started creating a collection of components and effects. Having a backlog of ideas at hand will come in handy at one point or another. But above all, in creating this collection, I got a chance to explore the possibilities of the ::before and ::after pseudo-classes, in combination with :hover state and transitions.</p>
+
+            <p>Each of the divs below has a different hover effect. Checkout the source code or fork the Pen to use any of them in your own projects.</p>
+
+            <div class="offset-box">
+              <p data-height="720" data-theme-id="dark" data-slug-hash="yqmeZP" data-default-tab="result" data-user="Yeaust" data-pen-title="Hover effect divs (transitions)" class="codepen">See the Pen <a href="https://codepen.io/Yeaust/pen/yqmeZP/">Hover effect divs (transitions)</a> by jvsandick (<a href="https://codepen.io/Yeaust">@Yeaust</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+            </div>
+
+            <h2>Notes</h2>
+            <p>This is collection is solely made as a reference guide. Sizes, colors, transition directions and speeds are just for demonstration purposes. Change them as you seem fit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      ScrollReveal().reveal('.content', { duration: 700 });
+      ScrollReveal().reveal('.article', { duration: 700, distance: '20px', origin: 'left' });
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+    $('.show').click(function(){
+      if ($(this).parent('.article').hasClass('active')) {
+        $(this).html('read more');
+        $(this).parent('.article').removeClass('active');
+      }});
+    </script>
+
+  </body>
+</html>
