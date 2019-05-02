@@ -1,4 +1,4 @@
-#mainmenu {
+#main-menu {
   @include bp(large) { grid-area: 1 / 2 / span 1 / span 1; }
   @include bp(medium) { grid-area: 1 / 1 / span 1 / span 1; }
   @include bp(small) {
@@ -87,12 +87,6 @@
   }
 
   #menu-icon {
-    .stroke {
-      width: calc( var(--gs) / 4 );
-      height: calc( var(--gs) / 32 );
-      margin: calc( var(--gs) / 16 ) 0;
-      background-color: $off-black;
-      transition: background-color $short-ease;
-    }
+    width: 30%;
   }
 }
