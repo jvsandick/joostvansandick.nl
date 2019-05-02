@@ -19,7 +19,7 @@
     &:not(.active){
       cursor: pointer;
       .titles {
-        @extend %diagonal-box;
+        // @extend %diagonal-box;
       }
       //background: $diagonal-strokes;
     }
@@ -64,6 +64,7 @@
     position: relative;
     border-top: 1px solid rgba(0, 0, 0, 0);
     border-bottom: 1px solid rgba(0, 0, 0, 0);
+    text-wrap: balance;
     //margin-right: 0px;
     h1 {
       color: $off-black;
@@ -83,7 +84,9 @@
     display: none;
     p {
       margin: var(--gp);
-      font-family: 'Crimson Text', serif;
+      // font-family: 'Open Sans', serif;
+      // font-family: 'Roboto Slab', serif;
+      font-family: 'Crimson text', serif;
       &:first-child {
         font-weight: 600;
       }

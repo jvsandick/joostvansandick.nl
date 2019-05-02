@@ -13,17 +13,18 @@
   "keywords": [
     "portfolio"
   ],
-  "author": "Joost_van_Sandick <jvsandick@gmail.com>",
+  "author": "Joost_van_Sandick <mail@joostvansandick.nl>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jvsandick/joostvansandick.nl/issues"
   },
   "homepage": "https://github.com/jvsandick/joostvansandick.nl#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.5",
     "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-compile-handlebars": "^0.6.1",
+    "gulp-imagemin": "^5.0.3",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2"
   }
