@@ -1,0 +1,33 @@
+#footer {
+  display: grid;
+  min-height: 300px;
+  width: 100vw;
+  background: $off-black;
+  bottom: 0;
+  left: 0;
+  color: $bg;
+  margin-bottom: calc(-1* var(--gs));
+  padding: var(--gs) var(--gs);
+  .footer-list {
+    width: calc( 2 * var(--gs));
+    h2 {
+      opacity: 0.4;
+    }
+    ul {
+      padding: 0;
+      list-style: none;
+      
+      li { 
+        color: $stroke;
+        line-height: 2;
+        opacity: 0.2;
+        font-size: 1em;
+        &:hover {
+          color: $yellow;
+          opacity: 1;
+          transition: 200ms ease-in-out;
+        }
+      }
+    }
+  }
+}

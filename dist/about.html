@@ -10,33 +10,44 @@
     <script src="https://unpkg.com/scrollreveal@4"></script>
     <link rel="stylesheet" href="css/app.css">
     <meta name="google-site-verification" content="ZJM8tKeS2i5jtXpuSSW6vi8O17RSZQKFqdp1-VEDndw" />
+    
 
 
   </head>
   <body>
     <div id="page-container">
 
-      <div class="grid-container" style="position: sticky;">
-        <div id="mobile-menu">
-          <img id="menu-icon" src="/images/menu_icon.png" alt="menu icon">
+      <div id="menu-container">
+        <div id="menu">
           
+          <div id="menu-overlay"></div>
+          <div id="menu-addon">
+              <img class="menu-button" id="close-button" src="/images/close_icon.png" alt="">
+              <img class=" menu-button" id="menu-button" src="/images/menu_icon.png" alt="">
+            <h2 id="menu-title">MENU</h2>
+          </div>
+          
+          <div id="menu-items">
+            <ul>
+              <a href="/"><li class="menu-item">Home</li></a>
+              <a href="/about.html"><li class="menu-item">About me</li></a>
+              <a href="/portfolio.html"><li class="menu-item">Portfolio</li></a>
+              <a href="/projects.html"><li class="menu-item">projects</li></a>
+              <a href="/contact.html"><li class="menu-item">Contact</li></a>
+            </ul>
+          </div>
         </div>
+      </div>
+      <div class="grid-container">
       
         <div id="header"><div>
           <h1>About me</h1>
           <h2>and you</h2>
         </div></div>
       
-        <div class="menu" id="main-menu">
-          <ul>
-            <a href="/"><li>Home</li></a>
-            <a href="/about.html"><li>About me</li></a>
-            <a href="/portfolio.html"><li>Portfolio</li></a>
-            <a href="/projects.html"><li>projects</li></a>
-            <a href="/contact.html"><li>Contact</li></a>
-          </ul>
-        </div>
       </div>
+    
+
     <div class="grid-container">
       <div class="article active">
         <!-- <div class="marquee img" style="background-image: url('/images/personal-website.jpg')"></div> -->
@@ -53,10 +64,31 @@
     </div>
 
     <footer>
-        <div class="grid-container">
-        </div>
-        
-    </footer>
+        <div>
+          <div class="grid-container" id="footer" >
+            <div class="footer-list">
+              <h2>Go to</h2>
+              <ul>
+                <a href="/"><li>Home</li></a>
+                <a href="/about.html"><li>About me</li></a>
+                <a href="/portfolio.html"><li>Portfolio</li></a>
+                <a href="/projects.html"><li>Projects</li></a>
+                <a href="/contact.html"><li>Contact</li></a>
+              </ul>
+            </div>
+            <div class="footer-list">
+              <h2>Find me online</h2>
+              <ul>
+                <a href="https://www.behance.net/joostvansandick"><li>Behance</li></a>
+                <a href="https://dribbble.com/joostvansandick"><li>Dribbble</li></a>
+                <a href="https://codepen.io/Yeaust/"><li>Codepen</li></a>
+                <a href="https://github.com/jvsandick"><li>Github</li></a>
+                <a href="https://www.linkedin.com/in/joostvansandick/"><li>Linkedin</li></a>
+                <a href="https://www.instagram.com/joostvansandick/"><li>Instagram</li></a>
+              </ul>
+            </div>
+          </div>
+        </div>    </footer>
 
     </div>
 
@@ -76,8 +108,16 @@
         $(this).addClass('active');
     }});
     $('#menu-icon').click(function(){
-        $('#mainmenu').toggleClass('active');
+        $('#mobile-menudiv ').toggleClass('active');
     });
+    </script>
+
+    <script>
+      $('.grid').masonry({
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+      });
     </script>
   </body>
 </html>

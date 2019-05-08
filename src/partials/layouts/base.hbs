@@ -14,6 +14,7 @@
     <script src="https://unpkg.com/scrollreveal@4"></script>
     <link rel="stylesheet" href="css/app.css">
     <meta name="google-site-verification" content="ZJM8tKeS2i5jtXpuSSW6vi8O17RSZQKFqdp1-VEDndw" />
+    
 
     {{#> head-block}}
       {{!-- Custom <head> content per page could be added. --}}
@@ -22,9 +23,15 @@
   <body>
     <div id="page-container">
 
+    {{#> menu-block}}
+      {{> includes/menu }}
+    {{/menu-block}}
+
     {{#> header-block}}
       {{> includes/header pagetitle="{{header}}" pagesubtitle="{{subheader}}"}}
     {{/header-block}}
+
+    
 
     {{#> content-block }}
     
@@ -60,8 +67,16 @@
         $(this).addClass('active');
     }});
     $('#menu-icon').click(function(){
-        $('#mainmenu').toggleClass('active');
+        $('#mobile-menudiv ').toggleClass('active');
     });
+    </script>
+
+    <script>
+      $('.grid').masonry({
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+      });
     </script>
   </body>
 </html>

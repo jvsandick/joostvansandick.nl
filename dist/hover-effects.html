@@ -10,33 +10,44 @@
     <script src="https://unpkg.com/scrollreveal@4"></script>
     <link rel="stylesheet" href="css/app.css">
     <meta name="google-site-verification" content="ZJM8tKeS2i5jtXpuSSW6vi8O17RSZQKFqdp1-VEDndw" />
+    
 
 
   </head>
   <body>
     <div id="page-container">
 
-      <div class="grid-container" style="position: sticky;">
-        <div id="mobile-menu">
-          <img id="menu-icon" src="/images/menu_icon.png" alt="menu icon">
+      <div id="menu-container">
+        <div id="menu">
           
+          <div id="menu-overlay"></div>
+          <div id="menu-addon">
+              <img class="menu-button" id="close-button" src="/images/close_icon.png" alt="">
+              <img class=" menu-button" id="menu-button" src="/images/menu_icon.png" alt="">
+            <h2 id="menu-title">MENU</h2>
+          </div>
+          
+          <div id="menu-items">
+            <ul>
+              <a href="/"><li class="menu-item">Home</li></a>
+              <a href="/about.html"><li class="menu-item">About me</li></a>
+              <a href="/portfolio.html"><li class="menu-item">Portfolio</li></a>
+              <a href="/projects.html"><li class="menu-item">projects</li></a>
+              <a href="/contact.html"><li class="menu-item">Contact</li></a>
+            </ul>
+          </div>
         </div>
+      </div>
+      <div class="grid-container">
       
         <div id="header"><div>
           <h1>Project</h1>
           <h2></h2>
         </div></div>
       
-        <div class="menu" id="main-menu">
-          <ul>
-            <a href="/"><li>Home</li></a>
-            <a href="/about.html"><li>About me</li></a>
-            <a href="/portfolio.html"><li>Portfolio</li></a>
-            <a href="/projects.html"><li>projects</li></a>
-            <a href="/contact.html"><li>Contact</li></a>
-          </ul>
-        </div>
       </div>
+    
+
     <div class="grid-container">
       <div class="article active">
         <div class="marquee img" style="background-image: url('images/Hover-effects.jpg')"></div>
@@ -62,10 +73,31 @@
     </div>
 
     <footer>
-        <div class="grid-container">
-        </div>
-        
-    </footer>
+        <div>
+          <div class="grid-container" id="footer" >
+            <div class="footer-list">
+              <h2>Go to</h2>
+              <ul>
+                <a href="/"><li>Home</li></a>
+                <a href="/about.html"><li>About me</li></a>
+                <a href="/portfolio.html"><li>Portfolio</li></a>
+                <a href="/projects.html"><li>Projects</li></a>
+                <a href="/contact.html"><li>Contact</li></a>
+              </ul>
+            </div>
+            <div class="footer-list">
+              <h2>Find me online</h2>
+              <ul>
+                <a href="https://www.behance.net/joostvansandick"><li>Behance</li></a>
+                <a href="https://dribbble.com/joostvansandick"><li>Dribbble</li></a>
+                <a href="https://codepen.io/Yeaust/"><li>Codepen</li></a>
+                <a href="https://github.com/jvsandick"><li>Github</li></a>
+                <a href="https://www.linkedin.com/in/joostvansandick/"><li>Linkedin</li></a>
+                <a href="https://www.instagram.com/joostvansandick/"><li>Instagram</li></a>
+              </ul>
+            </div>
+          </div>
+        </div>    </footer>
 
     </div>
 
@@ -85,90 +117,16 @@
         $(this).addClass('active');
     }});
     $('#menu-icon').click(function(){
-        $('#mainmenu').toggleClass('active');
+        $('#mobile-menudiv ').toggleClass('active');
     });
     </script>
-  </body>
-</html>
-
-
-
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hover effect study</title>
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="scss/_global.scss">
-    <script src="https://unpkg.com/scrollreveal@4"></script>
-  </head>
-  <body>
-    <div id="page-container">
-
-      <div class="grid-container" style="position: sticky;">
-        <div id="mobile-menu">
-          <div id="menu-icon">
-            <div class="stroke"></div>
-            <div class="stroke"></div>
-            <div class="stroke"></div>
-          </div>
-        </div>
-        <div id="header"><h1>meet your maker</h1></div>
-        <div class="menu" id="mainmenu">
-          <ul>
-            <a href="/index.html"><li>Home</li></a>
-            <a href="/about.html"><li>About me</li></a>
-            <a href="/portfolio.html"><li>Portfolio</li></a>
-            <a href="/projects.html"><li>projects</li></a>
-            <a href="/contact.html"><li>Contact</li></a>
-          </ul>
-        </div>
-      </div>
-
-      <div class="grid-container">
-        <div class="article active">
-          <div class="marquee img" style="background-image: url('images/Hover-effects.jpg')"></div>
-          <div class="titles">
-            <p>summer 2018 | self-study | CSS </p>
-            <h1>Exploring hover effect posibilities</h1>
-            <h3>::before / ::after, :hover and CSS transitions</h3>
-          </div>
-          <div class="content">
-            <p>I recently started creating a collection of components and effects. Having a backlog of ideas at hand will come in handy at one point or another. But above all, in creating this collection, I got a chance to explore the possibilities of the ::before and ::after pseudo-classes, in combination with :hover state and transitions.</p>
-
-            <p>Each of the divs below has a different hover effect. Checkout the source code or fork the Pen to use any of them in your own projects.</p>
-
-            <div class="offset-box">
-              <p data-height="720" data-theme-id="dark" data-slug-hash="yqmeZP" data-default-tab="result" data-user="Yeaust" data-pen-title="Hover effect divs (transitions)" class="codepen">See the Pen <a href="https://codepen.io/Yeaust/pen/yqmeZP/">Hover effect divs (transitions)</a> by jvsandick (<a href="https://codepen.io/Yeaust">@Yeaust</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-              <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-            </div>
-
-            <h2>Notes</h2>
-            <p>This is collection is solely made as a reference guide. Sizes, colors, transition directions and speeds are just for demonstration purposes. Change them as you seem fit.</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script>
-      ScrollReveal().reveal('.content', { duration: 700 });
-      ScrollReveal().reveal('.article', { duration: 700, distance: '20px', origin: 'left' });
+      $('.grid').masonry({
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+      });
     </script>
-
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/what-input/dist/what-input.js"></script>
-    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
-    <script src="js/app.js"></script>
-
-    <script>
-    $('.show').click(function(){
-      if ($(this).parent('.article').hasClass('active')) {
-        $(this).html('read more');
-        $(this).parent('.article').removeClass('active');
-      }});
-    </script>
-
   </body>
 </html>

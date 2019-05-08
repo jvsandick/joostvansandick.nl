@@ -1,51 +1,3 @@
-body {
-  overflow-x: hidden;
-  background-color: $bg;
-  font-family: 'Open sans', sans-serif;
-  color: $off-black;
-  position: relative;
-  transition: opacity $short-ease;
-  &::before,
-  &::after {
-    position: absolute;
-    content: '';
-    @include bp(smedium){ content: none; }
-    width: calc( 0.5 * var(--gsh) );
-    top: 95vh;
-    height: 6px;
-    z-index: 1;
-    background-color: $yellow;
-    animation: scroll 1.5s infinite;
-    animation-timing-function: ease-out;
-  }
-  &::before {
-    right: 50%;
-    transform: skew(0, 15deg);
-  }
-  &::after {
-    left: 50%;
-    transform: skew(0, -15deg);
-  }
-}
-@keyframes scroll {
-  0%, 100% {
-    top: 94vh;
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  80% {
-    top: 96vh;
-    opacity: 1;
-  }
-  90% {
-    top: 96vh;
-    opacity: 0;
-  }
-}
-
-
 #header {
   display: grid;
   @include bp(large) { grid-area: 1 / 4 / span 1 / span 4; }
@@ -72,7 +24,7 @@ body {
     text-transform: uppercase;
     font-weight: 500;
     font-family: 'Oswald', sans-serif;
-    animation-duration: 700ms;
+    animation-duration: 400ms;
     animation-name: appear;
   }
   h2 {

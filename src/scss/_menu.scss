@@ -1,92 +1,103 @@
-#main-menu {
-  @include bp(large) { grid-area: 1 / 2 / span 1 / span 1; }
-  @include bp(medium) { grid-area: 1 / 1 / span 1 / span 1; }
-  @include bp(small) {
+#menu-container {
+  position: fixed;
+  z-index: 201;
+  
+  #menu {
+    display: grid;
     position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    //opacity: 0;
-    display: none;
-    padding: var(--gs);
-    background: $strokes;
-    width: calc(3 * var(--gs));
-    box-shadow: -5px 0 $yellow;
-    &.active {
-      display: grid;
+    background-color: $yellow;
+    margin-left: var(--gsh);
+    left: -30vw;
+    transition: transform 200ms ease-out;
+    width: 30vw;
+    height: 100vh;
+    font-family: $header-font;
+    align-items: center;
+    &:hover{
+      transform: translateX(calc(30vw - var(--gsh)));
+      #menu-overlay { opacity: 0.7; }
+      #close-button { transform: rotate(360deg); opacity: 1;}
+      #menu-button { transform: rotate(360deg); opacity: 0;}
     }
-  }
-  padding: 0;
-  display: grid;
-}
-.menu {
-  place-items: center right;
-  font-family: 'Open Sans', sans-serif;
-  ul {
-    font-size: calc( var(--gs) * 0.18 );
-    text-align: right;
-    margin: 0;
-    padding: 0;
-    line-height: 2;
-    list-style: none;
-    text-transform: lowercase;
-    width: 100%;
-    li {
-      position: relative;
-      box-shadow: 0 0 $yellow;
-      transition:
-          color $short-ease,
-          box-shadow $short-ease;
-      padding-left: 3px;
-      &.active {
-        box-shadow: -0.5rem 0 $yellow;
-      }
-      &::before {
+
+    #menu-overlay {
+      position: absolute;
+      background-color: $yellow;
+      opacity: 0;
+      height: 100vh;
+      width: 200vw;
+      pointer-events: none;
+      transition: opacity 300ms ease-out;
+      z-index: 1;
+    }
+
+    #menu-addon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      z-index: 300;
+      width: var(--gsh);
+      display: grid;
+      justify-items: center;
+    }
+
+    .menu-button {
+      grid-area: 1 / 1 / 1 / 1;
+      width: 25px;
+      transition: transform 300ms ease-out, opacity 200ms ease-out;
+      margin-top: 24px;
+    }
+    #close-button {
+      opacity: 0;
+    }
+    #menu-button {
+      opacity: 1;
+    }
+
+    #menu-title {
+      transform: rotate(90deg);
+      margin: 50px 0;
+      line-height: 1;
+      font-size: 25px;
+      color: $off-black;
+      &::after {
         content: '';
         position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        border-top: 1px solid $stroke;
-        border-bottom: 1px solid $stroke;
-        transform: scale(0, 1);
-        transform-origin: left;
-        transition:
-            transform $short-ease;
-      }
-      &:hover {
-        box-shadow: -0.5rem 0 $yellow;
-      }
-      &:hover::before {
-        transform: scale(1, 1);
+        right: -80px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 3px;
+        display: inline-block;
+        background-color: $off-black;
       }
     }
-  }
-}
 
-#mobile-menu {
-  position: absolute;
-  z-index: 200;
-  top: 0;
-  left: 0;
-  display: none;
-  height: var(--gs);
-  width: var(--gs);
-  @include bp(small) { display: grid;}
-  //grid-area: span 1 / span 1;
-  place-items: center;
-  transition: border $short-ease;
-  border: 0 solid $yellow;
-  &:hover {
-    //border: 0.5rem solid $yellow;
-  }
-  &:hover #menu-icon .stroke {
-    background-color: $yellow;
-  }
-
-  #menu-icon {
-    width: 30%;
+    #menu-line {
+      border-left: 3px $off-black solid;
+      height: 40px;
+    }
+    
+    #menu-items {
+      z-index: 2;
+      ul {
+        padding: 0;
+        text-align: right;
+        line-height: 1.7;
+        list-style: none;
+        text-transform: uppercase;
+        width: 100%;
+      }
+      .menu-item {
+        padding-right: var(--gsh);
+        font-size: calc( 20px + var(--gs) * 0.06 );
+        transition: color 100ms ease-out;
+        &:hover{
+          background-color: $bg;
+        }
+      }
+    }
   }
 }

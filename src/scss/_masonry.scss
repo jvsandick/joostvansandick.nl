@@ -1,0 +1,13 @@
+.full-width {
+  grid-column: 1 / 8;
+}
+
+.grid {
+  width: 100%;
+  grid-column: 1 / 8;
+}
+
+.grid-item {  width: var(--gs); }
+.grid-item--width2 { width: calc( 2 * var(--gs)); }
+.grid-item--width3 { width: calc( 3 * var(--gs)); }
+.grid-item--width4 { width: calc( 4 * var(--gs)); }

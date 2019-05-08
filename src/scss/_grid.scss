@@ -10,6 +10,8 @@ html {
   --gw: calc( 100vw - 8vw );
   --gs: calc( var(--gw) / var(--columns));
   --gsh: calc( var(--gs) / 2 );
+  --gst: calc( var(--gs) / 3 );
+  --gsq: calc( var(--gs) / 4 );
   --gp: calc( var(--gs) * 0.1);
 }
 
