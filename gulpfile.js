@@ -12,7 +12,7 @@ function css(){
   return gulp
   .src('src/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('./css'))
     .pipe(browserSync.stream())
 };
 
@@ -27,7 +27,7 @@ function html() {
     .pipe(rename({
       extname: '.html'
     }))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
 };
 
@@ -52,7 +52,7 @@ function images() {
         })
       ])
     )
-    .pipe(gulp.dest("./dist/images"));
+    .pipe(gulp.dest("./images"));
 };
 
 
@@ -60,7 +60,7 @@ function images() {
 function watch() {
   browserSync.init({
     server: {
-      baseDir: 'dist'
+      baseDir: './'
     }
   });
   gulp.watch('src/scss/**/*.scss', css)
